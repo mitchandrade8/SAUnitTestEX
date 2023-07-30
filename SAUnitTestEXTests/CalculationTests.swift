@@ -26,5 +26,20 @@ final class CalculationTests: XCTestCase {
         // Then (Assert)
         XCTAssertEqual(tip, 25)
     }
+    
+    func testNegativeAmountTipCalculation() {
+        // Given (Arrange)
+        let enteredAmount = -100.00
+        let tipSlider = 25.00
+        let calculation = Calculation()
+        
+        // When (Act)
+        let tip = calculation.calculateTip(of: enteredAmount,
+                                           with: tipSlider)
+        
+        
+        // Then (Assert)
+        XCTAssertNil(tip)
+    }
  
 }
